@@ -1,7 +1,9 @@
 <section>
-  <h1>Players</h1>
+  <h1>Manchester United Players</h1>
 
-  <p>
-    Manchester United squad.
-  </p>
+  @for (player of players; track player.id) {
+    <app-player-card
+    [player]="player"
+    />
+  }
 </section>
