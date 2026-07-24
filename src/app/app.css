@@ -3,5 +3,6 @@
 }
 
 main {
-  padding: 20px;
+  min-height: 400px;
+  padding: 30px;
 }

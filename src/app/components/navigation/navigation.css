@@ -1,9 +1,18 @@
 nav {
     padding: 10px;
+    background-color: #1111114a;
 }
 
 ul {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 25px;
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
