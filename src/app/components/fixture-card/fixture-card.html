@@ -1,0 +1,20 @@
+<article>
+  <h2>
+    Date: {{ fixture().date | date }}
+  </h2>
+
+  <p>
+    Opponent: {{ fixture().opponent }}
+  </p>
+
+  <p>
+    Venue: {{ fixture().venue }}
+  </p>
+  
+  @if ( fixture().homeMatch) {
+    <p>Home Fixture</p>
+  } @else {
+    <p>Away Fixture</p>
+  }
+
+</article>

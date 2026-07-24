@@ -1,5 +1,8 @@
 <section>
     <h1>Fixtures</h1>
 
-    <p>Upcoming Fixtures</p>
+    @for (fixture of fixtures; track fixture.id) {
+        <app-fixture-card
+        [fixture]="fixture" />
+    }
 </section>
