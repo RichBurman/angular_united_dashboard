@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PlayerCard } from '../../components/player-card/player-card';
-import { players } from '../../data/players'
+import { PlayerService } from '../../services/player';
 
 @Component({
   selector: 'app-players',
@@ -9,5 +9,7 @@ import { players } from '../../data/players'
   styleUrl: './players.css',
 })
 export class Players {
-  players = players;
+  private playerService = inject(PlayerService);
+
+  players = this.playerService.getPlayers();
 }
