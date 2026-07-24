@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './home.css',
 })
 export class Home {
+  title = 'Manchester United Dashboard'
+  welcomeMessage = "Welcome to the home page!";
+  isLive = true;
 
+  showMessage() {
+  this.welcomeMessage = 'Live scores are coming soon!';
+}
 }

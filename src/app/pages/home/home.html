@@ -1,5 +1,6 @@
 <section>
-  <h1>Manchester United Dashboard</h1>
+  <h1>{{ title }}</h1>
 
-  <p>Welcome to the home page</p>
+  <p>{{ welcomeMessage }}</p>
+  <button [disabled]='!isLive' (click)="showMessage()">Live Scores</button>
 </section>
