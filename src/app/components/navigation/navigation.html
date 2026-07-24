@@ -1,9 +1,7 @@
 <nav>
-    <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/fixtures">Fixtures</a></li>
-        <li><a routerLink="/results">Results</a></li>
-        <li><a routerLink="/players">Players</a></li>
-        <li><a routerLink="/league-table">League Table</a></li>
-    </ul>
+  <ul>
+    @for (item of navigationItems; track item.route) {
+      <a [routerLink]="item.route">{{ item.label }}</a>
+    }
+  </ul>
 </nav>

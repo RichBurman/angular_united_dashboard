@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,5 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navigation.css',
 })
 export class Navigation {
+  private navigationService = inject(NavigationService);
 
+  navigationItems = this.navigationService.getNavigationItems();
 }
