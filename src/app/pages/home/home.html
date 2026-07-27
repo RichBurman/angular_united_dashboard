@@ -1,6 +1,6 @@
 <section>
   <h1>{{ title }}</h1>
 
-  <p>{{ welcomeMessage }}</p>
-  <button [disabled]='!isLive' (click)="showMessage()">Live Scores</button>
+  <p>{{ welcomeMessage() }}</p>
+  <button [disabled]='!isLive()' (click)="showMessage()">Live Scores</button>
 </section>

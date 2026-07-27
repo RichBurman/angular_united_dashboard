@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Home {
   title = 'Manchester United Dashboard'
-  welcomeMessage = "Welcome to the home page!";
-  isLive = true;
+  welcomeMessage = signal("Welcome to the home page!");
+  isLive = signal(true);
 
   showMessage() {
-  this.welcomeMessage = 'Live scores are coming soon!';
+  this.welcomeMessage.set('Live scores are coming soon!');
+  this.isLive.set(false);
 }
 }
