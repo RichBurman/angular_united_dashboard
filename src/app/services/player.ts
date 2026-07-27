@@ -8,4 +8,8 @@ export class PlayerService {
   getPlayers() {
     return players;
   }
+
+  getPlayerById(id: number) {
+  return players.find(player => player.id === id);
+}
 }

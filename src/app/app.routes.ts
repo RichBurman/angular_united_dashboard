@@ -5,6 +5,7 @@ import { Fixtures } from './pages/fixtures/fixtures';
 import { Results } from './pages/results/results';
 import { Players } from './pages/players/players';
 import { LeagueTable } from './pages/league-table/league-table';
+import { PlayerProfile } from './pages/player-profile/player-profile';
 
 export const routes: Routes = [
   {
@@ -18,22 +19,26 @@ export const routes: Routes = [
   },
   {
     path: 'fixtures',
-    component: Fixtures
+    component: Fixtures,
   },
   {
     path: 'results',
-    component: Results
+    component: Results,
   },
   {
     path: 'players',
-    component: Players
+    component: Players,
+  },
+  {
+    path: 'players/:id',
+    component: PlayerProfile,
   },
   {
     path: 'league-table',
-    component: LeagueTable
+    component: LeagueTable,
   },
   {
     path: '**',
-    component: NotFound
-  }
+    component: NotFound,
+  },
 ];
