@@ -6,14 +6,14 @@
     (input)="searchTerm.set($any($event.target).value)"
   />
 
-  @if (filteredPlayers().length > 0) {
+  @if (isLoading()) {
+    <p>Loading players...</p>
+  } @else {
     @for (player of filteredPlayers(); track player.id) {
       <app-player-card
         [player]="player"
         (profileClicked)="openProfile($event)"
       />
     }
-  } @else {
-    <p>No players found.</p>
   }
 </section>

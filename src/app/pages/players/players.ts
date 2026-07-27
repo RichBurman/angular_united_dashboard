@@ -14,14 +14,18 @@ export class Players {
   private playerService = inject(PlayerService);
   private router = inject(Router);
 
+  isLoading = signal(true);
+
   // players = this.playerService.getPlayers();
 
   players = signal<Player[]>([]);
 
   constructor() {
     this.playerService.getPlayers().subscribe((data) => {
-      console.log(data);
-      this.players.set(data);
+      setTimeout(() => {
+        this.players.set(data);
+        this.isLoading.set(false);
+      }, 1000);
     });
   }
 
