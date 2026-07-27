@@ -14,19 +14,28 @@ export class Players {
   private playerService = inject(PlayerService);
   private router = inject(Router);
 
-  players = this.playerService.getPlayers();
+  // players = this.playerService.getPlayers();
+
+  players = signal<Player[]>([]);
+
+  constructor() {
+    this.playerService.getPlayers().subscribe((data) => {
+      console.log(data);
+      this.players.set(data);
+    });
+  }
 
   searchTerm = signal('');
 
   filteredPlayers = computed(() => {
     const search = this.searchTerm().toLowerCase();
 
-    return this.players.filter(
+    return this.players().filter(
       (player) =>
         player.name.toLowerCase().includes(search) ||
         player.position.toLowerCase().includes(search) ||
         player.nationality.toLowerCase().includes(search) ||
-        player.number.toString().includes(search),
+        player.goals.toString().includes(search),
     );
   });
 

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Bruno Fernandes",
+    "position": "Midfielder",
+    "nationality": "Portugal",
+    "number": 8,
+    "goals": 0
+  },
+  {
+    "id": 2,
+    "name": "Kobbie Mainoo",
+    "position": "Midfielder",
+    "nationality": "England",
+    "number": 37,
+    "goals": 0
+  },
+  {
+    "id": 3,
+    "name": "Matheus Cunha",
+    "position": "Forward",
+    "nationality": "Brazil",
+    "number": 10,
+    "goals": 0
+  },
+  {
+    "id": 4,
+    "name": "Lisandro Martinez",
+    "position": "Defender",
+    "nationality": "Argentina",
+    "number": 6,
+    "goals": 0
+  }
+]
