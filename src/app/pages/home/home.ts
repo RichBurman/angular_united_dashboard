@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +7,24 @@ import { Component, signal } from '@angular/core';
   styleUrl: './home.css',
 })
 export class Home {
-  title = 'Manchester United Dashboard'
-  welcomeMessage = signal("Welcome to the home page!");
+  title = 'Manchester United Dashboard';
+  // welcomeMessage = signal("Welcome to the home page!");
   isLive = signal(true);
 
-  showMessage() {
-  this.welcomeMessage.set('Live scores are coming soon!');
-  this.isLive.set(false);
-}
+  statusMessage = computed(() =>
+    this.isLive()
+      ? ' Live scores are available'
+      : 'Live scores are coming soon!',
+  );
+
+
+
+  goOffline() {
+    this.isLive.set(false);
+  }
+
+  //   showMessage() {
+  //   // this.welcomeMessage.set('Live scores are coming soon!');
+  //   // this.isLive.set(false);
+  // }
 }
