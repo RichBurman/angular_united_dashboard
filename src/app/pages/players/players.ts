@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { PlayerCard } from '../../components/player-card/player-card';
 import { PlayerService } from '../../services/player';
 import { Player } from '../../models/players';
@@ -15,6 +15,20 @@ export class Players {
   private router = inject(Router);
 
   players = this.playerService.getPlayers();
+
+  searchTerm = signal('');
+
+  filteredPlayers = computed(() => {
+    const search = this.searchTerm().toLowerCase();
+
+    return this.players.filter(
+      (player) =>
+        player.name.toLowerCase().includes(search) ||
+        player.position.toLowerCase().includes(search) ||
+        player.nationality.toLowerCase().includes(search) ||
+        player.number.toString().includes(search),
+    );
+  });
 
   openProfile(player: Player) {
     this.router.navigate(['/players', player.id]);

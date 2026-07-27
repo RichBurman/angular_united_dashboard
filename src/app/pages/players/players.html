@@ -1,10 +1,19 @@
 <section>
   <h1>Manchester United Players</h1>
+  <input
+    type="text"
+    placeholder="Search Players..."
+    (input)="searchTerm.set($any($event.target).value)"
+  />
 
-  @for (player of players; track player.id) {
-    <app-player-card
-    [player]="player"
-    (profileClicked)="openProfile($event)"
-    />
+  @if (filteredPlayers().length > 0) {
+    @for (player of filteredPlayers(); track player.id) {
+      <app-player-card
+        [player]="player"
+        (profileClicked)="openProfile($event)"
+      />
+    }
+  } @else {
+    <p>No players found.</p>
   }
 </section>
