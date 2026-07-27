@@ -3,11 +3,9 @@
     {{ player().name }}
   </h2>
 
-  <p>
-    Position: {{ player().position }}
-  </p>
+  <p>Position: {{ player().position }}</p>
 
-  <p>
-    Number: {{ player().number }}
-  </p>
+  <p>Number: {{ player().number }}</p>
+
+  <button (click)="viewProfile()">View Profile</button>
 </article>

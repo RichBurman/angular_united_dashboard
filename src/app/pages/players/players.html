@@ -4,6 +4,7 @@
   @for (player of players; track player.id) {
     <app-player-card
     [player]="player"
+    (profileClicked)="openProfile($event)"
     />
   }
 </section>
