@@ -2,5 +2,5 @@
   <h1>{{ title }}</h1>
 
   <p>{{ statusMessage() }}</p>
-  <button [disabled]='!isLive()' (click)="goOffline()">Live Scores</button>
+  <button (click)="toggleLiveScores()">Toggle Live Scores</button>
 </section>

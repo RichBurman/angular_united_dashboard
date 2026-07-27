@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +9,25 @@ import { Component, computed, signal } from '@angular/core';
 export class Home {
   title = 'Manchester United Dashboard';
   // welcomeMessage = signal("Welcome to the home page!");
-  isLive = signal(true);
+  isLive = signal(this.getLiveScorePreference());
 
+  private getLiveScorePreference() {
+    return JSON.parse(localStorage.getItem('liveScores') ?? 'true');
+  }
   statusMessage = computed(() =>
     this.isLive()
       ? ' Live scores are available'
       : 'Live scores are coming soon!',
   );
 
+  constructor() {
+    effect(() => {
+      localStorage.setItem('liveScores', JSON.stringify(this.isLive()));
+    });
+  }
 
-
-  goOffline() {
-    this.isLive.set(false);
+  toggleLiveScores() {
+    this.isLive.update((value) => !value);
   }
 
   //   showMessage() {
