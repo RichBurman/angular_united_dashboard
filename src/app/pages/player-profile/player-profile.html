@@ -27,4 +27,17 @@
 </p>
   </section>
 
+  <button (click)="toggleFavorite()">
+
+  @if(favorite()) {
+    ⭐ Remove Favourite
+  } @else {
+    ☆ Add Favourite
+  }
+
+</button>
+}
+
+@if (favorite()) {
+  <p>This is one of your favourite players.</p>
 }
