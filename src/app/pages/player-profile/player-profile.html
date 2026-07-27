@@ -1,3 +1,7 @@
+<button (click)="goBack()">
+  Back to Players
+</button>
+
 @if (player) {
   <section>
     <h1>{{ player.name }}</h1>
@@ -10,4 +14,5 @@
       Number: {{ player.number }}
     </p>
   </section>
+
 }
