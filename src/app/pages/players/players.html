@@ -8,6 +8,8 @@
 
   @if (isLoading()) {
     <p>Loading players...</p>
+  } @else if (errorMessage()) {
+    <p>{{ errorMessage() }}</p>
   } @else {
     @for (player of filteredPlayers(); track player.id) {
       <app-player-card

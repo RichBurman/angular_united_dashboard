@@ -20,14 +20,24 @@ export class Players {
 
   players = signal<Player[]>([]);
 
-  constructor() {
-    this.playerService.getPlayers().subscribe((data) => {
+  errorMessage = signal('');
+
+
+constructor() {
+  this.playerService.getPlayers().subscribe({
+    next: (data) => {
       setTimeout(() => {
         this.players.set(data);
         this.isLoading.set(false);
       }, 1000);
-    });
-  }
+    },
+
+    error: () => {
+      this.errorMessage.set('Failed to load players.');
+      this.isLoading.set(false);
+    },
+  });
+}
 
   searchTerm = signal('');
 
