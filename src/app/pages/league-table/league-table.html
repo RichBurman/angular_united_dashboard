@@ -1,7 +1,36 @@
 <section>
   <h1>League Table</h1>
 
-  <p>
-    Premier League standings.
-  </p>
+  <p>Premier League standings.</p>
+
+  @if (standings.length) {
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Team</th>
+          <th>P</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>Pts</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of standings[0]?.table ?? []; track row.position) {
+          <tr>
+            <td>{{ row.position }}</td>
+            <td>{{ row.team.name }}</td>
+            <td>{{ row.playedGames }}</td>
+            <td>{{ row.won }}</td>
+            <td>{{ row.draw }}</td>
+            <td>{{ row.lost }}</td>
+            <td>{{ row.points }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } @else {
+    <p>Loading standings...</p>
+  }
 </section>
