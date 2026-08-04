@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LeagueService } from '../../services/league';
 
 @Component({
   selector: 'app-league-table',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class LeagueTable {
 
+    private leagueService = inject(LeagueService);
+
+    constructor() {
+      this.leagueService.getLeagueTable().subscribe((data) => {
+        console.log(data);
+      })
+    }
 }
