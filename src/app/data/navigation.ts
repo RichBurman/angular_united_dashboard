@@ -21,4 +21,8 @@ export const navigationItems: NavigationItem[] = [
     label: 'League Table',
     route: '/league-table',
   },
+  {
+    label: 'Blog',
+    route: '/blog',
+  },
 ];

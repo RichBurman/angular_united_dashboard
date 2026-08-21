@@ -6,6 +6,7 @@ import { Results } from './pages/results/results';
 import { Players } from './pages/players/players';
 import { LeagueTable } from './pages/league-table/league-table';
 import { PlayerProfile } from './pages/player-profile/player-profile';
+import { Blog } from './pages/blog/blog';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'league-table',
     component: LeagueTable,
+  },
+  {
+    path: 'blog',
+    component: Blog,
   },
   {
     path: '**',
