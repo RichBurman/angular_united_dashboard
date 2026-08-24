@@ -1,7 +1,14 @@
-section {
-  text-align: center;
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-h1 {
-  font-size: 32px;
+.home > h1 {
+  margin-bottom: 0.25rem;
+}
+
+.home > p {
+  margin-top: 0;
+  color: #666;
 }

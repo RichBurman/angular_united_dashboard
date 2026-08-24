@@ -1,0 +1,81 @@
+<section class="next-match">
+
+  <p class="eyebrow">NEXT MATCH</p>
+
+  @if (nextFixture(); as fixture) {
+
+    <div class="match">
+
+      <div class="team">
+
+        @if (fixture.homeMatch) {
+          <img
+            src="https://crests.football-data.org/66.png"
+            alt="Manchester United crest"
+          />
+
+          <h2>Manchester United</h2>
+        } @else {
+          <img
+            [src]="fixture.opponentCrest"
+            [alt]="fixture.opponent + ' crest'"
+          />
+
+          <h2>{{ fixture.opponent }}</h2>
+        }
+
+      </div>
+
+      <div class="versus">
+        <span>VS</span>
+      </div>
+
+      <div class="team">
+
+        @if (fixture.homeMatch) {
+          <img
+            [src]="fixture.opponentCrest"
+            [alt]="fixture.opponent + ' crest'"
+          />
+
+          <h2>{{ fixture.opponent }}</h2>
+        } @else {
+          <img
+            src="https://crests.football-data.org/66.png"
+            alt="Manchester United crest"
+          />
+
+          <h2>Manchester United</h2>
+        }
+
+      </div>
+
+    </div>
+
+    <div class="match-details">
+
+      <p>
+        {{ fixture.date | date: 'EEEE dd MMMM yyyy' }}
+      </p>
+
+      <p>
+        {{ fixture.date | date: 'HH:mm' }}
+      </p>
+
+      <span>
+        @if (fixture.homeMatch) {
+          HOME
+        } @else {
+          AWAY
+        }
+      </span>
+
+    </div>
+
+  } @else {
+
+    <p>No upcoming fixtures found.</p>
+
+  }
+
+</section>
