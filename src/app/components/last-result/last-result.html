@@ -1,0 +1,15 @@
+<section class="last-result">
+
+  <p class="eyebrow">LAST RESULT</p>
+
+  @if (lastResult(); as result) {
+
+    <app-result-card [match]="result" />
+
+  } @else {
+
+    <p>No results found.</p>
+
+  }
+
+</section>
