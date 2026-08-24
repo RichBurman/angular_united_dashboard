@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { Match } from '../../models/match';
 import { DatePipe } from '@angular/common';
 
@@ -10,4 +10,30 @@ import { DatePipe } from '@angular/common';
 })
 export class ResultCard {
   match = input.required<Match>();
+
+  result = computed(() => {
+    const match = this.match();
+
+    if (match.homeTeam.includes('Manchester United')) {
+      if (match.homeScore > match.awayScore) {
+        return 'WIN';
+      }
+
+      if (match.homeScore < match.awayScore) {
+        return 'LOSS';
+      }
+
+      return 'DRAW';
+    }
+
+    if (match.awayScore > match.homeScore) {
+      return 'WIN';
+    }
+
+    if (match.awayScore < match.homeScore) {
+      return 'LOSS';
+    }
+
+    return 'DRAW';
+  });
 }
