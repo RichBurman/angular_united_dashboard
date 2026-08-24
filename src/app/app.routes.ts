@@ -7,6 +7,7 @@ import { Players } from './pages/players/players';
 import { LeagueTable } from './pages/league-table/league-table';
 import { PlayerProfile } from './pages/player-profile/player-profile';
 import { Blog } from './pages/blog/blog';
+import { BlogPostPage } from './pages/blog-post/blog-post';
 
 export const routes: Routes = [
   {
@@ -41,6 +42,10 @@ export const routes: Routes = [
   {
     path: 'blog',
     component: Blog,
+  },
+  {
+    path: 'blog/:id',
+    component: BlogPostPage,
   },
   {
     path: '**',

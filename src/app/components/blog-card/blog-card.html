@@ -1,15 +1,11 @@
 <article class="blog-card">
-
   <div class="blog-date">
-    {{ post().date | date: 'dd MMMM yyyy' }}
+    {{ post().date | date: "dd MMMM yyyy" }}
   </div>
 
   <h2>{{ post().title }}</h2>
 
   <p>{{ post().excerpt }}</p>
 
-  <button type="button">
-    Read More
-  </button>
-
+  <a [routerLink]="['/blog', post().id]"> Read More </a>
 </article>

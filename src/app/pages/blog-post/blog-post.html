@@ -1,0 +1,29 @@
+<section class="blog-post-page">
+
+  @if (post(); as article) {
+
+    <header class="blog-post-header">
+
+      <p class="blog-post-date">
+        {{ article.date | date: 'dd MMMM yyyy' }}
+      </p>
+
+      <h1>{{ article.title }}</h1>
+
+      <p class="blog-post-excerpt">
+        {{ article.excerpt }}
+      </p>
+
+    </header>
+
+    <article class="blog-post-content">
+      <p>{{ article.content }}</p>
+    </article>
+
+  } @else {
+
+    <p>Sorry, this article could not be found.</p>
+
+  }
+
+</section>
