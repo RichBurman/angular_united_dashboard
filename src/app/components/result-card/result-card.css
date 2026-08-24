@@ -1,0 +1,34 @@
+.result-card {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.result-card p {
+  margin: 0 0 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.teams span {
+  flex: 1;
+  font-weight: 600;
+}
+
+.teams span:last-child {
+  text-align: right;
+}
+
+.teams strong {
+  white-space: nowrap;
+  font-size: 1.25rem;
+}

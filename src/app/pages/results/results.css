@@ -1,0 +1,23 @@
+.results-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.results-header {
+  margin-bottom: 2rem;
+}
+
+.results-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.results-header p {
+  color: #666;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

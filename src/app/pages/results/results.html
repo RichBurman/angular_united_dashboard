@@ -1,15 +1,26 @@
-<h1>Results</h1>
+<section class="results-page">
 
-@if (loading()) {
-  <p>Loading results...</p>
-}
+  <header class="results-header">
+    <h1>Results</h1>
+    <p>2026/27</p>
+  </header>
 
-@if (error()) {
-  <p>Sorry, we couldn't load the results.</p>
-}
-
-@if (!loading() && !error()) {
-  @for (match of matches(); track match.id) {
-    <app-result-card [match]="match" />
+  @if (loading()) {
+    <p>Loading results...</p>
   }
-}
+
+  @if (error()) {
+    <p>Sorry, we couldn't load the results.</p>
+  }
+
+  @if (!loading() && !error()) {
+    <div class="results-list">
+
+      @for (match of matches(); track match.id) {
+        <app-result-card [match]="match" />
+      }
+
+    </div>
+  }
+
+</section>
