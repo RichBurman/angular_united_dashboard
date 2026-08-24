@@ -14,7 +14,7 @@ export class ResultCard {
   result = computed(() => {
     const match = this.match();
 
-    if (match.homeTeam.includes('Manchester United')) {
+    if (match.homeTeamId === 66) {
       if (match.homeScore > match.awayScore) {
         return 'WIN';
       }

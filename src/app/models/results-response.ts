@@ -7,10 +7,12 @@ export interface ApiMatch {
   utcDate: string;
   status: string;
   homeTeam: {
+    id: number;
     name: string;
     crest: string;
   };
   awayTeam: {
+    id: number;
     name: string;
     crest: string;
   };

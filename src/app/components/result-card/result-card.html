@@ -1,34 +1,32 @@
 <div class="result-card">
-
   <p>{{ match().competition }}</p>
-  <p>{{ result() }}</p>
+
+  <div class="result-container">
+    <p
+      class="result"
+      [class.win]="result() === 'WIN'"
+      [class.draw]="result() === 'DRAW'"
+      [class.loss]="result() === 'LOSS'"
+    >
+      {{ result() }}
+    </p>
+  </div>
 
   <div class="teams">
-
     <div class="team">
-      <img
-        [src]="match().homeCrest"
-        [alt]="match().homeTeam + ' crest'"
-      />
+      <img [src]="match().homeCrest" [alt]="match().homeTeam + ' crest'" />
 
       <span>{{ match().homeTeam }}</span>
     </div>
 
-    <strong>
-      {{ match().homeScore }} - {{ match().awayScore }}
-    </strong>
+    <strong>{{ match().homeScore }} - {{ match().awayScore }}</strong>
 
     <div class="team">
-      <img
-        [src]="match().awayCrest"
-        [alt]="match().awayTeam + ' crest'"
-      />
+      <img [src]="match().awayCrest" [alt]="match().awayTeam + ' crest'" />
 
       <span>{{ match().awayTeam }}</span>
     </div>
-
   </div>
 
-  <p>{{ match().date | date: 'dd MMMM yyyy' }}</p>
-
+  <p>{{ match().date | date: "dd MMMM yyyy" }}</p>
 </div>

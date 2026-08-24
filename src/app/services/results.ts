@@ -29,6 +29,8 @@ export class ResultService {
             awayTeam: match.awayTeam.name,
             homeScore: match.score.fullTime.home ?? 0,
             awayScore: match.score.fullTime.away ?? 0,
+            homeTeamId: match.homeTeam.id,
+            awayTeamId: match.awayTeam.id,
             competition: match.competition.name,
             homeCrest: match.homeTeam.crest,
             awayCrest: match.awayTeam.crest,

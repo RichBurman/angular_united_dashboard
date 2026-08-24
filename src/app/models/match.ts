@@ -3,6 +3,8 @@ export interface Match {
   date: string;
   homeTeam: string;
   awayTeam: string;
+  homeTeamId: number;
+  awayTeamId: number;
   homeScore: number;
   awayScore: number;
   competition: string;
