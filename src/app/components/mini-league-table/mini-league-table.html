@@ -1,0 +1,63 @@
+<section class="mini-league-table">
+
+  <div class="header">
+    <p class="eyebrow">PREMIER LEAGUE</p>
+
+    <h2>League Table</h2>
+  </div>
+
+  @if (teams().length > 0) {
+
+    <div class="table">
+
+      <div class="table-header">
+        <span>POS</span>
+        <span>TEAM</span>
+        <span>PTS</span>
+      </div>
+
+      @for (team of teams(); track team.team.id) {
+
+        <div
+          class="table-row"
+          [class.united]="team.team.id === 66"
+        >
+
+          <span class="position">
+            {{ team.position }}
+          </span>
+
+          <div class="team">
+
+            <img
+              [src]="team.team.crest"
+              [alt]="team.team.name + ' crest'"
+            />
+
+            <span>
+              {{ team.team.shortName }}
+            </span>
+
+          </div>
+
+          <strong>
+            {{ team.points }}
+          </strong>
+
+        </div>
+
+      }
+
+    </div>
+
+  } @else {
+
+    <p>League table unavailable.</p>
+
+  }
+
+  <a routerLink="/league-table">
+    View Full Table →
+  </a>
+
+</section>

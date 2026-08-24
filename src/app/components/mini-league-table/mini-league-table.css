@@ -1,0 +1,110 @@
+.mini-league-table {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #666;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 45px 1fr 45px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.table-header {
+  padding: 0 0.75rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #888;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.table-row {
+  min-height: 55px;
+  padding: 0 0.75rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.position {
+  font-weight: 700;
+  color: #777;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.team img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.team span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.table-row strong {
+  text-align: right;
+}
+
+.table-row.united {
+  background: #f3f4f6;
+  border-left: 4px solid #da291c;
+  border-right: 4px solid #da291c;
+  border-radius: 8px;
+}
+
+.table-row.united .position,
+.table-row.united .team span,
+.table-row.united strong {
+  font-weight: 800;
+}
+
+.mini-league-table > a {
+  display: block;
+  margin-top: 1.25rem;
+  color: inherit;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mini-league-table > a:hover {
+  text-decoration: underline;
+}
