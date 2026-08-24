@@ -4,10 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogService } from '../../services/blog';
 import { BlogPost } from '../../models/blog-post';
 import { DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-blog-post',
-  imports: [DatePipe],
+  imports: [DatePipe, RouterLink],
   templateUrl: './blog-post.html',
   styleUrl: './blog-post.css',
 })

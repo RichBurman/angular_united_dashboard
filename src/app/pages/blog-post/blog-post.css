@@ -37,3 +37,15 @@
 .blog-post-content p {
   margin: 0;
 }
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #555;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
