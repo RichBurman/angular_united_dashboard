@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { ResultService } from '../../services/results';
+import { Match } from '../../models/match';
 
 @Component({
   selector: 'app-results',
@@ -6,6 +8,22 @@ import { Component } from '@angular/core';
   templateUrl: './results.html',
   styleUrl: './results.css',
 })
-export class Results {
+export class Results implements OnInit {
+  private resultService = inject(ResultService);
+  matches = signal<Match[]>([]);
+  loading = signal(true);
+  error = signal(false);
 
+  ngOnInit() {
+    this.resultService.getResults().subscribe({
+      next: (data) => {
+        this.matches.set(data);
+        this.loading.set(false);
+      },
+      error: () => {
+        this.error.set(true);
+        this.loading.set(false);
+      },
+    });
+  }
 }

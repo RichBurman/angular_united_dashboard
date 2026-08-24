@@ -1,7 +1,20 @@
-<section>
-  <h1>Results</h1>
+<h1>Results</h1>
 
-  <p>
-    Manchester United previous results.
-  </p>
-</section>
+@if (loading()) {
+  <p>Loading results...</p>
+}
+
+@if (error()) {
+  <p>Sorry, we couldn't load the results.</p>
+}
+
+@if (!loading() && !error()) {
+  @for (match of matches(); track match.id) {
+    <div>
+      <h2>{{ match.homeTeam }} {{ match.homeScore }} - {{ match.awayScore }} {{ match.awayTeam }}</h2>
+
+      <p>{{ match.date }}</p>
+      <p>{{ match.competition }}</p>
+    </div>
+  }
+}
