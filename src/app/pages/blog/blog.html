@@ -1,1 +1,26 @@
-<p>blog works!</p>
+<section class="blog-page">
+
+  <header class="blog-header">
+    <h1>Manchester United Blog</h1>
+    <p>My thoughts, opinions and analysis on Manchester United.</p>
+  </header>
+
+  @if (loading()) {
+    <p>Loading posts...</p>
+  }
+
+  @if (error()) {
+    <p>Sorry, we couldn't load the blog posts.</p>
+  }
+
+  @if (!loading() && !error()) {
+    <div class="blog-list">
+
+      @for (post of posts(); track post.id) {
+        <app-blog-card [post]="post" />
+      }
+
+    </div>
+  }
+
+</section>
