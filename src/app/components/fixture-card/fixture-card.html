@@ -1,20 +1,45 @@
-<article>
-  <h2>
-    Date: {{ fixture().date | date }}
-  </h2>
+<article class="fixture-card">
 
-  <p>
-    Opponent: {{ fixture().opponent }}
-  </p>
+  <div class="fixture-date">
+    {{ fixture().date | date: 'EEEE, dd MMMM yyyy' }}
+  </div>
 
-  <p>
-    Venue: {{ fixture().venue }}
-  </p>
-  
-  @if ( fixture().homeMatch) {
-    <p>Home Fixture</p>
-  } @else {
-    <p>Away Fixture</p>
-  }
+  <div class="fixture-content">
+
+    <div class="fixture-team">
+      <img
+        src="https://crests.football-data.org/66.png"
+        alt="Manchester United crest"
+      />
+
+      <span class="team-name">
+        Manchester United
+      </span>
+    </div>
+
+    <div class="fixture-info">
+      <span class="vs">VS</span>
+
+      @if (fixture().homeMatch) {
+        <span class="venue">Old Trafford</span>
+        <span class="home-away">HOME</span>
+      } @else {
+        <span class="venue">{{ fixture().venue }}</span>
+        <span class="home-away">AWAY</span>
+      }
+    </div>
+
+    <div class="fixture-team">
+      <img
+        [src]="fixture().opponentCrest"
+        [alt]="fixture().opponent + ' crest'"
+      />
+
+      <span class="team-name">
+        {{ fixture().opponent }}
+      </span>
+    </div>
+
+  </div>
 
 </article>

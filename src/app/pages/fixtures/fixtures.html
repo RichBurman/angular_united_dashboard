@@ -1,8 +1,17 @@
 <section>
-    <h1>Fixtures</h1>
+  <h1>Fixtures</h1>
 
-    @for (fixture of fixtures; track fixture.id) {
-        <app-fixture-card
-        [fixture]="fixture" />
+  @if (loading()) {
+    <p>Loading fixtures...</p>
+  }
+
+  @if (error()) {
+    <p>Sorry, we couldn't load the fixtures.</p>
+  }
+
+  @if (!loading() && !error()) {
+    @for (fixture of fixtures(); track fixture.id) {
+      <app-fixture-card [fixture]="fixture" />
     }
+  }
 </section>

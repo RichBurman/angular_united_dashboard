@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { fixture } from '../../models/fixture';
+import { Fixture } from '../../models/fixture';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -10,5 +10,5 @@ import { DatePipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FixtureCard {
-  fixture = input.required<fixture>();
+  fixture = input.required<Fixture>();
 }
