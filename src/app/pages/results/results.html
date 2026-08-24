@@ -10,11 +10,6 @@
 
 @if (!loading() && !error()) {
   @for (match of matches(); track match.id) {
-    <div>
-      <h2>{{ match.homeTeam }} {{ match.homeScore }} - {{ match.awayScore }} {{ match.awayTeam }}</h2>
-
-      <p>{{ match.date }}</p>
-      <p>{{ match.competition }}</p>
-    </div>
+    <app-result-card [match]="match" />
   }
 }

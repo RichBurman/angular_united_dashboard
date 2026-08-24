@@ -1,10 +1,10 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ResultService } from '../../services/results';
 import { Match } from '../../models/match';
-
+import { ResultCard } from '../../components/result-card/result-card';
 @Component({
   selector: 'app-results',
-  imports: [],
+  imports: [ResultCard],
   templateUrl: './results.html',
   styleUrl: './results.css',
 })
