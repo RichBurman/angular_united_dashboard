@@ -4,13 +4,27 @@
 
   <div class="teams">
 
-    <span>{{ match().homeTeam }}</span>
+    <div class="team">
+      <img
+        [src]="match().homeCrest"
+        [alt]="match().homeTeam + ' crest'"
+      />
+
+      <span>{{ match().homeTeam }}</span>
+    </div>
 
     <strong>
       {{ match().homeScore }} - {{ match().awayScore }}
     </strong>
 
-    <span>{{ match().awayTeam }}</span>
+    <div class="team">
+      <img
+        [src]="match().awayCrest"
+        [alt]="match().awayTeam + ' crest'"
+      />
+
+      <span>{{ match().awayTeam }}</span>
+    </div>
 
   </div>
 

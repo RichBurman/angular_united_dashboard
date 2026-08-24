@@ -30,6 +30,8 @@ export class ResultService {
             homeScore: match.score.fullTime.home ?? 0,
             awayScore: match.score.fullTime.away ?? 0,
             competition: match.competition.name,
+            homeCrest: match.homeTeam.crest,
+            awayCrest: match.awayTeam.crest,
           })),
       ),
     );

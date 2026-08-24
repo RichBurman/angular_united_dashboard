@@ -1,34 +1,44 @@
 .result-card {
   padding: 1.5rem;
-  margin-bottom: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #fff;
 }
 
-.result-card p {
+.result-card > p {
   margin: 0 0 1rem;
   color: #666;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .teams {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.teams span {
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
   flex: 1;
-  font-weight: 600;
+  text-align: center;
 }
 
-.teams span:last-child {
-  text-align: right;
+.team img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.team span {
+  font-weight: 600;
 }
 
 .teams strong {
   white-space: nowrap;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
