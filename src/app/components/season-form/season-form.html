@@ -1,0 +1,30 @@
+<section class="season-form">
+
+  <p class="eyebrow">FORM</p>
+
+  @if (results().length > 0) {
+
+    <div class="form-list">
+
+      @for (result of results(); track $index) {
+
+        <span
+          class="form-result"
+          [class.win]="result === 'WIN'"
+          [class.draw]="result === 'DRAW'"
+          [class.loss]="result === 'LOSS'"
+        >
+          {{ result.charAt(0) }}
+        </span>
+
+      }
+
+    </div>
+
+  } @else {
+
+    <p>No results yet.</p>
+
+  }
+
+</section>
