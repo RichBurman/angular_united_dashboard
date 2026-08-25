@@ -1,0 +1,107 @@
+<main class="admin-page">
+  @if (!authService.isAuthenticated()) {
+    <section class="login-card">
+      <p class="eyebrow">UNITED HUB ADMIN</p>
+      <h1>Sign in to manage the blog</h1>
+      <p class="muted">Create, edit, and remove posts from your dashboard.</p>
+
+      <form (ngSubmit)="login()">
+        <label>
+          Username
+          <input name="username" [(ngModel)]="loginUsername" required />
+        </label>
+
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            [(ngModel)]="loginPassword"
+            required
+          />
+        </label>
+
+        @if (loginError()) {
+          <p class="error">{{ loginError() }}</p>
+        }
+
+        <button type="submit">Sign in</button>
+      </form>
+    </section>
+  } @else {
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">CONTENT STUDIO</p>
+        <h1>Manage the blog</h1>
+      </div>
+      <button class="secondary-button" type="button" (click)="logout()">
+        Sign out
+      </button>
+    </header>
+
+    <div class="admin-layout">
+      <section class="editor-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">{{ editingId() ? 'EDIT POST' : 'NEW POST' }}</p>
+            <h2>{{ editingId() ? 'Edit article' : 'Create an article' }}</h2>
+          </div>
+          @if (editingId()) {
+            <button class="text-button" type="button" (click)="startNewPost()">
+              New post
+            </button>
+          }
+        </div>
+
+        <form (ngSubmit)="savePost()">
+          <label>
+            Title
+            <input name="title" [(ngModel)]="form.title" required />
+          </label>
+
+          <label>
+            Date
+            <input name="date" type="date" [(ngModel)]="form.date" required />
+          </label>
+
+          <label>
+            Excerpt
+            <textarea name="excerpt" rows="3" [(ngModel)]="form.excerpt" required></textarea>
+          </label>
+
+          <label>
+            Article content
+            <textarea name="content" rows="9" [(ngModel)]="form.content" required></textarea>
+          </label>
+
+          <button type="submit">{{ editingId() ? 'Save changes' : 'Publish post' }}</button>
+        </form>
+      </section>
+
+      <section class="posts-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">PUBLISHED</p>
+            <h2>Existing posts</h2>
+          </div>
+          <span class="post-count">{{ posts().length }}</span>
+        </div>
+
+        <div class="post-list">
+          @for (post of posts(); track post.id) {
+            <article class="post-row">
+              <div>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.date }}</p>
+              </div>
+              <div class="row-actions">
+                <button class="text-button" type="button" (click)="editPost(post)">Edit</button>
+                <button class="delete-button" type="button" (click)="deletePost(post)">Delete</button>
+              </div>
+            </article>
+          }
+        </div>
+      </section>
+    </div>
+  }
+</main>

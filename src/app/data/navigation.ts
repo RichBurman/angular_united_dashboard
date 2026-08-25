@@ -21,4 +21,8 @@ export const navigationItems: NavigationItem[] = [
     label: 'Blog',
     route: '/blog',
   },
+  {
+    label: 'Admin',
+    route: '/admin',
+  },
 ];
