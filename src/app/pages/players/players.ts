@@ -49,8 +49,19 @@ constructor() {
         player.name.toLowerCase().includes(search) ||
         player.position.toLowerCase().includes(search) ||
         player.nationality.toLowerCase().includes(search) ||
-        player.goals.toString().includes(search),
+        (player.number?.toString() ?? '').includes(search),
     );
+  });
+
+  groupedPlayers = computed(() => {
+    const players = this.filteredPlayers();
+
+    return [
+      { label: 'Goalkeepers', players: players.filter((player) => player.position === 'Goalkeeper') },
+      { label: 'Defenders', players: players.filter((player) => player.position === 'Defender') },
+      { label: 'Midfielders', players: players.filter((player) => player.position === 'Midfielder') },
+      { label: 'Forwards', players: players.filter((player) => player.position === 'Forward') },
+    ];
   });
 
   openProfile(player: Player) {

@@ -1,0 +1,174 @@
+.profile-page {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 2rem 1.5rem 4rem;
+}
+
+.back-button {
+	margin-bottom: 1.5rem;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #991b1b;
+	cursor: pointer;
+	font: inherit;
+	font-weight: 800;
+}
+
+.profile-card {
+	overflow: hidden;
+	border: 1px solid #e4e4e7;
+	border-radius: 18px;
+	background: #ffffff;
+	box-shadow:
+		0 1px 2px rgb(0 0 0 / 4%),
+		0 8px 24px rgb(0 0 0 / 5%);
+}
+
+.profile-hero {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 2rem;
+	background: #171717;
+	color: #ffffff;
+}
+
+.player-photo {
+	display: grid;
+	flex: 0 0 auto;
+	place-items: center;
+	width: 128px;
+	height: 128px;
+	border-radius: 50%;
+	background: #da291c;
+	color: #fca5a5;
+	font-size: 4.5rem;
+	font-weight: 800;
+}
+
+.player-photo img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.profile-heading {
+	min-width: 0;
+}
+
+.eyebrow {
+	margin: 0 0 0.4rem;
+	color: #991b1b;
+	font-size: 0.65rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+}
+
+.profile-hero .eyebrow {
+	color: #fca5a5;
+}
+
+.profile-heading h1 {
+	margin: 0;
+	font-size: 2rem;
+	line-height: 1.1;
+}
+
+.position {
+	margin: 0.5rem 0 0;
+	color: #d4d4d4;
+	font-weight: 700;
+}
+
+.shirt-number {
+	margin-left: auto;
+	color: #fca5a5;
+	font-size: 2rem;
+	font-weight: 800;
+}
+
+.profile-details,
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	padding: 1.5rem 2rem;
+}
+
+.profile-details {
+	border-bottom: 1px solid #e4e4e7;
+}
+
+.profile-details div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.profile-details span,
+.stat span {
+	color: #71717a;
+	font-size: 0.75rem;
+}
+
+.stats-section {
+	padding: 1.5rem 2rem 2rem;
+}
+
+.section-heading h2 {
+	margin: 0;
+	font-size: 1.35rem;
+}
+
+.stats-grid {
+	padding: 1rem 0 0;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.stat {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding: 1rem;
+	border: 1px solid #e4e4e7;
+	border-radius: 10px;
+}
+
+.stat strong {
+	font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+	.profile-page {
+		padding: 1.5rem 1rem 3rem;
+	}
+
+	.profile-hero {
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 1.5rem;
+	}
+
+	.player-photo {
+		width: 88px;
+		height: 88px;
+		font-size: 3rem;
+	}
+
+	.profile-heading h1 {
+		font-size: 1.5rem;
+	}
+
+	.shirt-number {
+		margin-left: 0;
+		font-size: 1.5rem;
+	}
+
+	.profile-details,
+	.stats-section {
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
+	}
+}

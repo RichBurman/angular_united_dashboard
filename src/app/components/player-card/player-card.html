@@ -1,11 +1,22 @@
 <article>
-  <h2>
-    {{ player().name }}
-  </h2>
+  <div class="player-photo">
+    @if (player().photoUrl) {
+      <img [src]="player().photoUrl" [alt]="player().name" />
+    } @else {
+      <span>{{ player().name.charAt(0) }}</span>
+    }
+  </div>
 
-  <p>Position: {{ player().position }}</p>
+  <div class="player-content">
+    <p class="position">{{ player().position }}</p>
+    <h2>{{ player().name }}</h2>
 
-  <p>Number: {{ player().number }}</p>
+    <p class="nationality">{{ player().nationality }}</p>
 
-  <button (click)="viewProfile()">View Profile</button>
+    @if (player().number) {
+      <span class="shirt-number">#{{ player().number }}</span>
+    }
+
+    <button type="button" (click)="viewProfile()">View Profile</button>
+  </div>
 </article>

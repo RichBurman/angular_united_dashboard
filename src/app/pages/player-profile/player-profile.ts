@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
-import { Component, effect, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlayerService } from '../../services/player';
+import { Player } from '../../models/players';
 
 @Component({
   selector: 'app-player-profile',
@@ -12,33 +13,27 @@ import { PlayerService } from '../../services/player';
 export class PlayerProfile {
   private route = inject(ActivatedRoute);
   private location = inject(Location);
+  private playerService = inject(PlayerService);
+
+  id = this.route.snapshot.paramMap.get('id');
+  player = signal<Player | null>(null);
+  isLoading = signal(true);
+  errorMessage = signal('');
 
   constructor() {
-    effect(() => {
-      localStorage.setItem(
-        `player-${this.player?.id}-favorite`,
-        JSON.stringify(this.favorite()),
-      );
+    this.playerService.getPlayerById(Number(this.id)).subscribe({
+      next: (player) => {
+        this.player.set(player);
+        this.isLoading.set(false);
+      },
+      error: () => {
+        this.errorMessage.set('Player profile unavailable.');
+        this.isLoading.set(false);
+      },
     });
   }
 
-  id = this.route.snapshot.paramMap.get('id');
-
-  private playerService = inject(PlayerService);
-
-  player = this.playerService.getPlayerById(Number(this.id));
-
-  favorite = signal(
-    JSON.parse(
-      localStorage.getItem(`player-${this.player?.id}-favorite`) ?? 'false',
-    ),
-  );
-
   goBack() {
     this.location.back();
-  }
-
-  toggleFavorite() {
-    this.favorite.update((value) => !value);
   }
 }

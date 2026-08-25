@@ -1,10 +1,68 @@
 article {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 5%);
+}
+
+.player-photo {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  background: #171717;
+  color: #fca5a5;
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.player-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-content {
+  position: relative;
+  padding: 1rem;
+}
+
+.position,
+.nationality {
+  margin: 0;
+  color: #71717a;
+  font-size: 0.75rem;
 }
 
 h2 {
-  margin-top: 0;
+  margin: 0.35rem 0;
+  font-size: 1.05rem;
+}
+
+.shirt-number {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: #991b1b;
+  font-weight: 800;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.65rem 0.8rem;
+  border: 0;
+  border-radius: 8px;
+  background: #da291c;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+button:hover {
+  background: #b91c1c;
 }

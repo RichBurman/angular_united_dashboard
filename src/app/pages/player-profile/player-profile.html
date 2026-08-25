@@ -1,43 +1,66 @@
-<button (click)="goBack()">
-  Back to Players
-</button>
+<main class="profile-page">
+  <button class="back-button" type="button" (click)="goBack()">
+    &larr; Back to Players
+  </button>
 
-@if (player) {
-  <section>
-<h1>{{ player.name }}</h1>
+  @if (isLoading()) {
+    <p>Loading player profile...</p>
+  } @else if (errorMessage()) {
+    <p>{{ errorMessage() }}</p>
+  } @else if (player(); as player) {
+    <section class="profile-card">
+      <div class="profile-hero">
+        <div class="player-photo">
+          @if (player.photoUrl) {
+            <img [src]="player.photoUrl" [alt]="player.name" />
+          } @else {
+            <span>{{ player.name.charAt(0) }}</span>
+          }
+        </div>
 
-<p>
-  Position: {{ player.position }}
-</p>
+        <div class="profile-heading">
+          <p class="eyebrow">MANCHESTER UNITED FIRST TEAM</p>
+          <h1>{{ player.name }}</h1>
+          <p class="position">{{ player.position }}</p>
+        </div>
 
-<p>
-  Squad Number: {{ player.number }}
-</p>
+        @if (player.number) {
+          <div class="shirt-number">#{{ player.number }}</div>
+        }
+      </div>
 
-<p>
-  Nationality: {{ player.nationality }}
-</p>
+      <div class="profile-details">
+        <div>
+          <span>Nationality</span>
+          <strong>{{ player.nationality }}</strong>
+        </div>
+        <div>
+          <span>Squad number</span>
+          <strong>{{ player.number ?? 'N/A' }}</strong>
+        </div>
+      </div>
 
-<p>
-  Appearances: {{ player.appearances }}
-</p>
+      <div class="stats-section">
+        <div class="section-heading">
+          <p class="eyebrow">2026/27 SEASON</p>
+          <h2>Performance</h2>
+        </div>
 
-<p>
-  Goals: {{ player.goals }}
-</p>
-  </section>
-
-  <button (click)="toggleFavorite()">
-
-  @if(favorite()) {
-    ⭐ Remove Favourite
-  } @else {
-    ☆ Add Favourite
+        <div class="stats-grid">
+          <div class="stat">
+            <strong>{{ player.appearances ?? 'N/A' }}</strong>
+            <span>Appearances</span>
+          </div>
+          <div class="stat">
+            <strong>{{ player.goals ?? 'N/A' }}</strong>
+            <span>Goals</span>
+          </div>
+          <div class="stat">
+            <strong>{{ player.assists ?? 'N/A' }}</strong>
+            <span>Assists</span>
+          </div>
+        </div>
+      </div>
+    </section>
   }
-
-</button>
-}
-
-@if (favorite()) {
-  <p>This is one of your favourite players.</p>
-}
+</main>
