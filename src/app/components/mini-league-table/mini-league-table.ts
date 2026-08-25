@@ -24,22 +24,23 @@ export class MiniLeagueTable implements OnInit {
   }
 
   private getRelevantTeams(table: TeamStanding[]): TeamStanding[] {
+    const visibleTeamCount = 9;
     const unitedIndex = table.findIndex((team) => team.team.id === 66);
 
     if (unitedIndex === -1) {
-      return table.slice(0, 5);
+      return table.slice(0, visibleTeamCount);
     }
 
-    let start = unitedIndex - 2;
+    let start = unitedIndex - Math.floor(visibleTeamCount / 2);
 
     if (start < 0) {
       start = 0;
     }
 
-    if (start + 5 > table.length) {
-      start = Math.max(0, table.length - 5);
+    if (start + visibleTeamCount > table.length) {
+      start = Math.max(0, table.length - visibleTeamCount);
     }
 
-    return table.slice(start, start + 5);
+    return table.slice(start, start + visibleTeamCount);
   }
 }

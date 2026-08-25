@@ -1,10 +1,42 @@
-<section class="home">
-  <h1>Manchester United Dashboard</h1>
+<main class="home">
 
-  <p>2026/27 Season</p>
+<header class="hero">
 
-  <app-next-match></app-next-match>
-  <app-last-result></app-last-result>
-  <app-season-form></app-season-form>
-  <app-mini-league-table />
-</section>
+  <div class="hero-brand">
+    <span class="club-dot"></span>
+
+    <div>
+      <p class="eyebrow">MANCHESTER UNITED</p>
+      <h1>United Hub</h1>
+    </div>
+  </div>
+
+  <div class="season-badge">
+    2026/27
+  </div>
+
+</header>
+
+  <section class="match-grid">
+
+    <app-next-match />
+
+    <app-last-result />
+
+  </section>
+
+  <section class="content-grid">
+
+    <div class="news-column">
+      <app-latest-posts />
+    </div>
+
+    <aside class="sidebar">
+      <app-mini-league-table />
+    </aside>
+
+  </section>
+
+  <app-season-form />
+
+</main>

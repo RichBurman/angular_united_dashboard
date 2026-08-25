@@ -11,6 +11,8 @@ import { DatePipe } from '@angular/common';
 export class ResultCard {
   match = input.required<Match>();
 
+  compact = input(false);
+
   result = computed(() => {
     const match = this.match();
 

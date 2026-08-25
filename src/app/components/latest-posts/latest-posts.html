@@ -1,0 +1,32 @@
+<section class="latest-posts">
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">FROM THE BLOG</p>
+      <h2>Latest Posts</h2>
+    </div>
+
+    <a routerLink="/blog">View All →</a>
+  </div>
+
+  @if (posts().length > 0) {
+    <div class="posts">
+      @for (post of posts(); track post.id) {
+        <article class="post-card">
+          <p class="date">
+            {{ post.date | date: "dd MMMM yyyy" }}
+          </p>
+
+          <h3>{{ post.title }}</h3>
+
+          <p class="excerpt">
+            {{ post.excerpt }}
+          </p>
+
+          <a [routerLink]="['/blog', post.id]"> Read More → </a>
+        </article>
+      }
+    </div>
+  } @else {
+    <p>No blog posts available.</p>
+  }
+</section>

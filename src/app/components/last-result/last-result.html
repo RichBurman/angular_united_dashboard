@@ -4,7 +4,10 @@
 
   @if (lastResult(); as result) {
 
-    <app-result-card [match]="result" />
+    <app-result-card
+      [match]="result"
+      [compact]="true"
+    />
 
   } @else {
 

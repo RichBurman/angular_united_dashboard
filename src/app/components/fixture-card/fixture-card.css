@@ -31,6 +31,21 @@
   text-align: center;
 }
 
+.fixture-content.away .fixture-team:first-child {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.fixture-content.away .fixture-info {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.fixture-content.away .fixture-team:last-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 .team-name {
   font-size: 1.15rem;
   font-weight: 700;
@@ -77,6 +92,23 @@
 
   .fixture-team:last-child {
     order: 3;
+  }
+
+  .fixture-content.away .fixture-team:first-child {
+    grid-column: auto;
+    grid-row: auto;
+    order: 3;
+  }
+
+  .fixture-content.away .fixture-team:last-child {
+    grid-column: auto;
+    grid-row: auto;
+    order: 1;
+  }
+
+  .fixture-content.away .fixture-info {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 

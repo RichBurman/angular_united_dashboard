@@ -1,4 +1,7 @@
-<div class="result-card">
+<div
+  class="result-card"
+  [class.compact]="compact()"
+>
   <p>{{ match().competition }}</p>
 
   <div class="result-container">

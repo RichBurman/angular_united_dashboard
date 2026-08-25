@@ -4,7 +4,10 @@
     {{ fixture().date | date: 'EEEE, dd MMMM yyyy' }}
   </div>
 
-  <div class="fixture-content">
+  <div
+    class="fixture-content"
+    [class.away]="!fixture().homeMatch"
+  >
 
     <div class="fixture-team">
       <img

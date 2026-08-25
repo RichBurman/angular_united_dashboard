@@ -1,14 +1,124 @@
 .home {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1.5rem 4rem;
 }
 
-.home > h1 {
-  margin-bottom: 0.25rem;
+/* HERO */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+  padding: 0.5rem 0 1.5rem;
+
+  border-bottom: 1px solid #e4e4e7;
 }
 
-.home > p {
-  margin-top: 0;
-  color: #666;
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.club-dot {
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #da291c;
+
+  box-shadow:
+    0 0 0 5px rgb(218 41 28 / 10%);
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+
+  color: #71717a;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: 2rem;
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+.season-badge {
+  padding: 0.55rem 0.85rem;
+
+  border: 1px solid #dedee2;
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: #3f3f46;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+/* MATCHES */
+
+.match-grid {
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr;
+
+  gap: 1.5rem;
+
+  margin-bottom: 1.5rem;
+
+  align-items: stretch;
+}
+
+/* BLOG + TABLE */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.news-column,
+.sidebar {
+  min-width: 0;
+}
+
+/* FORM */
+
+app-season-form {
+  display: block;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .match-grid,
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .home {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .hero {
+    margin-bottom: 2rem;
+  }
 }
