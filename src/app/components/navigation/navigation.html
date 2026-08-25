@@ -1,7 +1,15 @@
-<nav>
+<nav aria-label="Primary navigation">
   <ul>
     @for (item of navigationItems; track item.route) {
-      <a [routerLink]="item.route">{{ item.label }}</a>
+      <li>
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
+        >
+          {{ item.label }}
+        </a>
+      </li>
     }
   </ul>
 </nav>

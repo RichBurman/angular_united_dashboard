@@ -8,5 +8,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Header {
-  title = "Manchester United Dashboard";
+  title = 'United Hub';
 }

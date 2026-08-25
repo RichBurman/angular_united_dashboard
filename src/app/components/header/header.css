@@ -1,6 +1,91 @@
-header {
-    padding: 20px;
-    text-align: center;
-    background-color: #da291c;
-    color: white;
+.site-header {
+    background: #171717;
+    color: #ffffff;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+}
+
+.club-mark {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgb(255 255 255 / 22%);
+    border-radius: 50%;
+    background: #da291c;
+    box-shadow: 0 6px 18px rgb(0 0 0 / 25%);
+}
+
+.club-mark img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.header-copy {
+    min-width: 0;
+}
+
+.eyebrow {
+    margin: 0 0 0.25rem;
+    color: #fca5a5;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.header-copy h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.tagline {
+    margin: 0.3rem 0 0;
+    color: #d4d4d4;
+    font-size: 0.8rem;
+}
+
+.season-label {
+    margin-left: auto;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgb(255 255 255 / 24%);
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .header-inner {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .club-mark {
+        width: 52px;
+        height: 52px;
+    }
+
+    .club-mark img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-copy h1 {
+        font-size: 1.5rem;
+    }
+
+    .season-label {
+        font-size: 0.7rem;
+    }
 }
