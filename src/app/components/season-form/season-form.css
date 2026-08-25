@@ -4,11 +4,14 @@
   justify-content: space-between;
   gap: 2rem;
 
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 2rem;
 
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  background: white;
+  border: 1px solid #e4e4e7;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 5%);
 }
 
 .season-form h2 {
@@ -56,5 +59,11 @@
   .season-form {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .form-list {
+    flex-wrap: wrap;
   }
 }
