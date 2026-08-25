@@ -129,6 +129,11 @@ padding: 1.5rem 2rem;
   letter-spacing: 0.08em;
 }
 
+.match-details .countdown {
+  background: #171717;
+  color: #ffffff;
+}
+
 
 /* MOBILE */
 

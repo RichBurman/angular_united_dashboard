@@ -1,4 +1,12 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
 .last-result {
+  box-sizing: border-box;
+  height: 100%;
+
   padding: 1.5rem 2rem;
 
   border: 1px solid #e4e4e7;

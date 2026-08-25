@@ -83,11 +83,16 @@
   align-items: stretch;
 }
 
+.match-grid > *,
+.content-grid > * {
+  min-width: 0;
+}
+
 /* BLOG + TABLE */
 
 .content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.9fr);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }

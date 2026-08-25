@@ -62,6 +62,16 @@
         {{ fixture.date | date: 'HH:mm' }}
       </p>
 
+      <span class="countdown">
+        @if (daysUntilMatch() === 0) {
+          TODAY
+        } @else if (daysUntilMatch() === 1) {
+          1 DAY TO GO
+        } @else {
+          {{ daysUntilMatch() }} DAYS TO GO
+        }
+      </span>
+
       <span>
         @if (fixture.homeMatch) {
           HOME
@@ -77,5 +87,7 @@
     <p>No upcoming fixtures found.</p>
 
   }
+
+  <app-season-form />
 
 </section>

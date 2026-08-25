@@ -1,35 +1,45 @@
-<section>
-  <h1>League Table</h1>
-
-  <p>Premier League standings.</p>
+<section class="league-page">
+  <header class="league-header">
+    <div>
+      <p class="eyebrow">PREMIER LEAGUE</p>
+      <h1>League Table</h1>
+      <p>2026/27 standings</p>
+    </div>
+    <span class="season-badge">PL</span>
+  </header>
 
   @if (standings.length) {
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Team</th>
-          <th>P</th>
-          <th>W</th>
-          <th>D</th>
-          <th>L</th>
-          <th>Pts</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (row of standings[0]?.table ?? []; track row.position) {
+    <div class="table-shell">
+      <table>
+        <thead>
           <tr>
-            <td>{{ row.position }}</td>
-            <td>{{ row.team.name }}</td>
-            <td>{{ row.playedGames }}</td>
-            <td>{{ row.won }}</td>
-            <td>{{ row.draw }}</td>
-            <td>{{ row.lost }}</td>
-            <td>{{ row.points }}</td>
+            <th>#</th>
+            <th>Team</th>
+            <th>P</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>Pts</th>
           </tr>
-        }
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          @for (row of standings[0].table; track row.position) {
+            <tr [class.united-row]="row.team.id === 66">
+              <td class="position">{{ row.position }}</td>
+              <td class="team-cell">
+                <img [src]="row.team.crest" [alt]="row.team.name + ' crest'" />
+                <span>{{ row.team.name }}</span>
+              </td>
+              <td>{{ row.playedGames }}</td>
+              <td>{{ row.won }}</td>
+              <td>{{ row.draw }}</td>
+              <td>{{ row.lost }}</td>
+              <td class="points">{{ row.points }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   } @else {
     <p>Loading standings...</p>
   }

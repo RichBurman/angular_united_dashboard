@@ -1,56 +1,132 @@
-section {
-  padding: 2rem;
-  color: #1f2937;
+.league-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  color: #18181b;
 }
 
-h1 {
-  margin-bottom: 0.5rem;
+.league-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: #991b1b;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.league-header h1 {
+  margin: 0;
   font-size: 2rem;
 }
 
-p {
-  margin-bottom: 1rem;
-  color: #6b7280;
+.league-header p:last-child {
+  margin: 0.5rem 0 0;
+  color: #71717a;
+}
+
+.season-badge {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #171717;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.table-shell {
+  overflow-x: auto;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 5%);
 }
 
 table {
   width: 100%;
+  min-width: 620px;
   border-collapse: collapse;
-  background: #ffffff;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 th,
 td {
-  padding: 0.85rem 1rem;
+  padding: 0.9rem 1rem;
   text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 th {
-  background: #f3f4f6;
-  font-weight: 600;
-  color: #374151;
+  background: #fafafa;
+  color: #71717a;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-tr:hover {
-  background: #f9fafb;
+tbody tr:hover {
+  background: #fafafa;
 }
 
 tbody tr:last-child td {
   border-bottom: none;
 }
 
+.position {
+  width: 3rem;
+  color: #71717a;
+  font-weight: 800;
+}
+
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 260px;
+  font-weight: 700;
+}
+
+.team-cell img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.points {
+  font-weight: 800;
+}
+
+.united-row {
+  background: #fff7f7;
+  box-shadow: inset 4px 0 0 #da291c;
+}
+
+.united-row .position,
+.united-row .team-cell,
+.united-row .points {
+  color: #991b1b;
+  font-weight: 800;
+}
+
 @media (max-width: 768px) {
-  section {
-    padding: 1rem;
+  .league-page {
+    padding: 1.5rem 1rem 3rem;
   }
 
-  th,
-  td {
-    padding: 0.65rem 0.75rem;
-    font-size: 0.95rem;
+  .league-header h1 {
+    font-size: 1.75rem;
   }
 }
