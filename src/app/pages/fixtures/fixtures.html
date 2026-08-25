@@ -1,17 +1,46 @@
 <section>
-  <h1>Fixtures</h1>
+  <header class="matches-header">
+    <h1>Matches</h1>
+    <p>2026/27</p>
+  </header>
 
-  @if (loading()) {
-    <p>Loading fixtures...</p>
-  }
+  <div class="matches-section">
+    <h2>Recent Results</h2>
 
-  @if (error()) {
-    <p>Sorry, we couldn't load the fixtures.</p>
-  }
-
-  @if (!loading() && !error()) {
-    @for (fixture of fixtures(); track fixture.id) {
-      <app-fixture-card [fixture]="fixture" />
+    @if (resultsLoading()) {
+      <p>Loading results...</p>
     }
-  }
+
+    @if (resultsError()) {
+      <p>Sorry, we couldn't load the results.</p>
+    }
+
+    @if (!resultsLoading() && !resultsError()) {
+      <div class="matches-list">
+        @for (result of results(); track result.id) {
+          <app-result-card [match]="result" />
+        }
+      </div>
+    }
+  </div>
+
+  <div class="matches-section">
+    <h2>Upcoming Fixtures</h2>
+
+    @if (fixturesLoading()) {
+      <p>Loading fixtures...</p>
+    }
+
+    @if (fixturesError()) {
+      <p>Sorry, we couldn't load the fixtures.</p>
+    }
+
+    @if (!fixturesLoading() && !fixturesError()) {
+      <div class="matches-list">
+        @for (fixture of fixtures(); track fixture.id) {
+          <app-fixture-card [fixture]="fixture" />
+        }
+      </div>
+    }
+  </div>
 </section>

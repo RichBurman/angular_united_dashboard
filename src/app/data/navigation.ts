@@ -6,12 +6,8 @@ export const navigationItems: NavigationItem[] = [
     route: '/home',
   },
   {
-    label: 'Fixtures',
+    label: 'Matches',
     route: '/fixtures',
-  },
-  {
-    label: 'Results',
-    route: '/results',
   },
   {
     label: 'Players',
